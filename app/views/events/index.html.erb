@@ -1,0 +1,10 @@
+<%# rdirect user depends on if he have any event or not %>
+<div class="divBackground">
+<div class="notes-form-container">
+  <% unless current_user.events.any? %>
+    <%= render "events_cta"%>
+  <% else %>
+    <%= render "events_landing", events: @events; %>
+  <% end %>
+</div>
+</div>

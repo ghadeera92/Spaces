@@ -1,0 +1,303 @@
+/*
+    *= require trix
+    *= require simple_calendar
+    *= require_tree
+    *= require_self
+*/
+
+// @import "bootstrap.css";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// // @import "normalize";
+// // @import "global.css.scss";
+// @import "notes.css.scss";
+// @import "welcome.css.scss";
+// // @import "favorites.css.scss";
+// @import "todo_lists.css.scss";
+
+//------------------------------------------------- todo-lists ---------------------------------------------------
+$white_opaque: rgba(250, 250, 250, 0.3);
+$dark: #1f7972;
+$anotherDark: #25857d;
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400|PT+Mono&display=swap");
+$font: "Raleway", sans-serif;
+$black: #455a64;
+$light: #eeeeee;
+$pale: #a4e1e7;
+$navy: #37474f;
+$dark2: #263238;
+$white: #ffffff;
+$pale1: #c5e7d8;
+$icon: #f78d72;
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.divBackground {
+  //   background-color: #D8DBE2;
+  //   height: 100%;
+  // background: -webkit-linear-gradient(40deg, #4cb8c4 10%, #eaecc6 100%);
+  // background: -moz-linear-gradient(40deg, #4cb8c4 10%, #eaecc6 100%);
+  // background: -ms-linear-gradient(40deg, #4cb8c4 10%, #eaecc6 100%);
+  // background: -o-linear-gradient(40deg, #4cb8c4 10%, #eaecc6 100%);
+  // background: linear-gradient(40deg, #4cb8c4 10%, #eaecc6 100%);
+  background: -webkit-linear-gradient(40deg, #a4e1e7 10%, #eaecc6 100%);
+  background: -moz-linear-gradient(40deg, #a4e1e7 10%, #eaecc6 100%);
+  background: -ms-linear-gradient(40deg, #a4e1e7 10%, #eaecc6 100%);
+  background: -o-linear-gradient(40deg, #a4e1e7 10%, #eaecc6 100%);
+  background: linear-gradient(40deg, #a4e1e7 10%, #eaecc6 100%);
+  font-family: $font;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.mailLink {
+  text-decoration: none !important;
+  color: white;
+}
+
+.divBackground1 {
+  background-color: rgb(236, 236, 236);
+  font-family: $font;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.todo-list-container {
+  width: 60%;
+  max-width: 750px;
+  background: $white_opaque;
+  margin: 0 auto 1em auto;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.03);
+  padding: 2em;
+  text-align: center;
+}
+
+.todo_list_title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: $navy;
+  letter-spacing: 1px;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: $navy;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.todo_list_sub_title {
+  margin: 0 0 3em 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: $dark;
+  font-weight: 100;
+}
+
+.index_row {
+  padding: 2em;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+  .todo_list_sub_title {
+    margin-bottom: 0;
+  }
+}
+
+#todo_items_wrapper {
+  .row {
+    width: 100%;
+    border-top: 1px solid rgba(250, 250, 250, 0.3);
+    border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+    .complete {
+      width: 10%;
+      float: left;
+      text-align: center;
+      border-right: 1px solid rgba(250, 250, 250, 0.3);
+      padding: 1em 0;
+    }
+    .todo_item {
+      width: 80%;
+      float: left;
+      p {
+        margin: 0;
+        padding: 1em;
+        color: $dark;
+        font-weight: 100;
+      }
+    }
+    .trash {
+      width: 10%;
+      float: left;
+      text-align: center;
+      border-left: 1px solid rgba(250, 250, 250, 1);
+      padding: 1em 0;
+    }
+    i {
+      color: grey;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        color: $dark;
+      }
+    }
+  }
+  #form {
+    margin-top: 2em;
+    padding: 0 5%;
+    input[type="text"] {
+      width: 72%;
+      margin-right: 2%;
+      display: inline-block;
+      outline: none;
+      background: rgba(250, 250, 250, 0.4);
+      border: none;
+      height: 40px;
+      border-radius: 4px;
+      padding: 1em 2em;
+    }
+    input[type="submit"] {
+      background: rgba(250, 250, 250, 0.4);
+      outline: none;
+      border: none;
+      height: 40px;
+      border-radius: 4px;
+      width: 25%;
+      display: inline-block;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: $dark;
+      }
+    }
+    ::-webkit-input-placeholder {
+      color: $dark;
+    }
+  }
+}
+
+.links {
+  display: block;
+  margin: 1.5em auto 1.5em auto;
+  text-align: center;
+  font-size: 0.8em;
+  color: $dark;
+  a {
+    color: $dark;
+  }
+}
+
+.forms {
+  padding: 0 5%;
+}
+// label {
+//   color: $dark;
+// }
+input[type="text"],
+textarea {
+  width: 90%;
+  margin: 0.5em 2% 1em 0;
+  display: inline-block;
+  outline: none;
+  background: rgba(250, 250, 250, 0.4);
+  border: none;
+  height: 40px;
+  border-radius: 4px;
+  padding: 1em 2em;
+}
+textarea {
+  height: 200px;
+}
+input[type="submit"] {
+  background: white;
+  outline: none;
+  border: none;
+  height: 40px;
+  border-radius: 4px;
+  width: 25%;
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  color: $dark;
+  &:hover {
+    background: $dark;
+    color: white;
+  }
+}
+
+.submitDark {
+  background: $dark !important;
+  color: white !important;
+  &:hover {
+    background: $anotherDark !important;
+    color: white !important;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $dark;
+}
+.spaceh1 {
+  font-size: 40px;
+  color: white;
+}
+
+$navy: #577399;
+$light: #d8dbe2;
+$pale: #b7cee8;
+$navy: #577399;
+$dark: #495867;
+$white: #ffffff;
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400|PT+Mono&display=swap");
+$font: "Raleway", sans-serif;
+
+.spacefooter {
+  margin-bottom: 0;
+  margin-right: 0;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 10px;
+  p {
+    text-transform: uppercase;
+    color: $navy;
+    font-family: $font;
+    letter-spacing: 3px;
+  }
+  .navside {
+    font-family: $font;
+    text-transform: uppercase;
+    color: $dark;
+    text-decoration: none;
+    &:hover {
+      color: $pale;
+      background: $white;
+    }
+  }
+}
+
+footer p {
+  color: $black;
+  text-align: center;
+  padding: 20px 0;
+}
+footer > p > a{
+  color: $pale1;
+}

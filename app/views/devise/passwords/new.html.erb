@@ -1,0 +1,31 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="panel panel--static">
+    <%# INSTRUCTIONS SECTION %>
+    <div style="position: relative; left: 560px; color: white">
+        <h1 class="panel__heading">RESET PASSWORD INSTRUCTIONS</h1>
+         <p class="panel__copy">Enter the same email you signed up with.<br >We will send an E-mail to reset <br >your password to a new one.</p><br >
+         <p class="panel__copy">Thank you for choosing our space.<br > We will wait for you..</p><br ><br >
+         <h1 class="panel__heading">OTHER OPTIONS</h1>
+        <%= render "devise/shared/links" %>
+    </div>
+    <%# Reset Password Section %>
+    <div class="panel panel--sliding">
+        <div class="panel__content signup">
+        <br ><br ><br ><br ><br >
+        <h1 class="panel__heading">Reset Password</h1>
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%# For Errors %>
+          <%= f.error_notification %>
+          <%# print exactly what are the errors %>
+          <%= render "devise/shared/error_messages", resource: resource%>
+          <%# Form %>
+          <form id="signup">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input--email" %>
+              <%= f.button :submit, "Reset", class: "submitDark"  %>
+           </form>
+        <% end %> 
+        </div>
+     </div>    
+</div>
+

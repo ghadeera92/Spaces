@@ -1,0 +1,25 @@
+<div class="divBackground">
+<div class="notes-form-container">
+<%# <div class="wrapper-container"> %>
+    <div class="wrapper">
+           <div class="note_title">
+       Add Note
+    </div>
+    <br>
+		   <%= form_for(@note) do |f| %>
+        <%= f.label :title %>
+          <br>
+            <%= f.text_field :title %><br>
+              <%= f.hidden_field :content, id: :post_content %>
+              <div class="trix-editor-container">
+              <br>
+               <%= f.label :content %>
+               <br>
+              <trix-editor input="post_content"></trix-editor>
+              </div>
+              <%= f.submit %>
+           <% end %>
+    </div>
+<%# </div> %>
+</div>
+</div>

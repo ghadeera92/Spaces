@@ -1,0 +1,362 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// .dashboard-space
+// $black: #252021;
+// $light: #d8dbe2;
+// $pale: #b7cee8;
+// $navy: #577399;
+// $dark: #495867;
+// $white: #ffffff;
+
+$black: #455a64;
+$light: #eeeeee;
+$pale: #c5e7d8;
+$navy: #37474f;
+$dark: #263238;
+$white: #ffffff;
+$icon: #F78D72;
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400|PT+Mono&display=swap");
+$font: "Raleway", sans-serif;
+$mono: "PT Mono", monospace;
+$ease: all 0.3s ease;
+
+body {
+  background-color: $light;
+}
+
+#dashboard-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 700px;
+  border: 1px solid $light;
+  background-color: $white;
+}
+.leftside-menu {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  background: $navy;
+  // background: rgba(55,71,79 ,0.7);
+  box-shadow: 2px 2px 15px rgba($dark, 0.3);
+  text-align: center;
+}
+.avatar {
+  margin-top: 55%;
+  margin-bottom: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    color: white;
+    font-size: 0.8em;
+    margin-top: 15px;
+  }
+}
+.iconspace {
+  width: 55px;
+  height: 55px;
+  background: $dark;
+  border-radius: 50%;
+  p {
+    color: $white;
+    font-size: 1.7em;
+    margin: 0;
+    margin-top: 9px;
+  }
+}
+
+.iconp {
+  color: $light !important;
+}
+
+li {
+  list-style-type: none;
+  // color: $dark;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  &:hover {
+    background: $white;
+    color: $navy;
+    transition: $ease;
+    text-decoration: none;
+  }
+}
+
+.navsidedit{
+  color: $light;
+  &:hover {
+    background: $pale;
+    color: $icon;
+    transition: $ease;
+    text-decoration: none;
+  }
+}
+.navside {
+  cursor: pointer;
+  padding: 3px;
+  font-family: $font;
+  color: $navy;
+
+  &:hover {
+    background: $pale;
+    color: $icon;
+    transition: $ease;
+    text-decoration: none;
+  }
+}
+
+.navsidelist {
+  cursor: pointer;
+  padding: 3px;
+  font-family: $font;
+  color: $navy;
+
+  &:hover {
+    color: $white;
+    transition: $ease;
+    font-size: 17px;
+    text-decoration: none;
+  }
+}
+
+.navsideweb {
+  cursor: pointer;
+  padding: 3px;
+  font-family: $font;
+  color: $navy;
+  &:hover {
+    color: $black;
+    transition: $ease;
+    font-size: 17px;
+    text-decoration: none;
+  }
+}
+
+.navsidenote {
+  cursor: pointer;
+  padding: 3px;
+  font-family: $font;
+  color: $navy;
+
+  &:hover {
+    color: $dark;
+    font-size: 17px;
+    transition: $ease;
+    text-decoration: none;
+  }
+}
+
+.timespace {
+  margin: 0;
+  font-size: 1.15em;
+  color: $white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $mono;
+  text-align: center;
+  color: $pale;
+  background: $white;
+  padding: 5px;
+}
+
+.timespace2 {
+  color: $white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#spacedate {
+  color: $navy;
+  font-family: $mono;
+  font-size: 1.3em;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.main-grid {
+  margin-top: 3.5%;
+  width: 70%;
+  margin-left: 25%;
+  background: $white;
+  height: 90%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "one four"
+    "one five"
+    "two five"
+    "two five"
+    "three six"
+    "three six"
+    "three six";
+}
+.item {
+  border: 1px solid $light;
+}
+//time
+.one {
+  grid-area: one;
+  grid-column: 1 / 2;
+  background: $pale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// for time box
+.two {
+  grid-area: two;
+  grid-column: 1;
+}
+
+//weather
+.three {
+  grid-area: three;
+  grid-column: 1;
+  background: $light;
+}
+
+.weather {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -70px;
+  p {
+    font-size: 0.7em;
+  }
+}
+// .city {
+//   color: $dark;
+// }
+
+//game
+.four {
+  grid-area: four;
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    margin-top: 8px;
+  }
+}
+
+//rooms
+.five {
+  grid-area: five;
+  grid-column: 2;
+}
+
+.rooms {
+  margin-bottom: -20px;
+}
+
+//dily list
+.rooms--btns {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+.six {
+  grid-area: six;
+  grid-column: 2;
+  background: $pale;
+}
+
+.reminders--list {
+  margin-top: 10px;
+  margin-bottom: -60px;
+}
+
+// note part
+
+.note {
+  color: $navy;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.info {
+  height: 5px;
+  width: 100%;
+  background: rgba($white, 0.85);
+  margin-left: 15px;
+}
+
+.todo-switch1 {
+  display: inline-block;
+  background: $navy;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+// game
+
+.flip-container {
+  
+  perspective: 1000;
+  margin: 10px;
+  float: left;
+}
+/* turning on hover */
+
+.flip-container,
+.front,
+.front a i,
+.back {
+  color: $white;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 20px;
+}
+/* flipping speed here */
+
+.flipper {
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* making the the other side hidden while flipping */
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* front side is in front of a back side */
+
+.front {
+  z-index: 2;
+  background-color: $dark;
+  color: white;
+}
+/* back side */
+
+.back {
+  transform: rotateY(180deg);
+  background-color: lightblue;
+}
+
+.back p {
+  font-size: 18px;
+  margin-top: 0px;
+  font-family: "Kaushan Script", cursive;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: #333;
+  color: white;
+}

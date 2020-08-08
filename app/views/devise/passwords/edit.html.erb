@@ -1,0 +1,48 @@
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="panel panel--static">
+    <%# INSTRUCTIONS SECTION %>
+    <div style="position: relative; left: 560px; color: white">
+        <h1 class="panel__heading">CHANGE PASSWORD INSTRUCTIONS</h1>
+         <p class="panel__copy">Enter your new password twice.<br >It should be 6 characters minimum.</p>
+         <p class="panel__copy">Thank you for choosing our space. Welcome Back.</p><br >
+         <h1 class="panel__heading">OTHER OPTIONS</h1><br >
+        <%= render "devise/shared/links" %>
+    </div>
+    <%# Change Password Section %>
+    <div class="panel panel--sliding">
+        <div class="panel__content signup">
+        <br ><br ><br ><br ><br >
+        <h1 class="panel__heading">Change your Password</h1>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%# Error Messages %>
+            <%= f.error_notification %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%# Token %>
+            <%= f.input :reset_password_token, as: :hidden %>
+            <%= f.full_error :reset_password_token %>
+            <%# Form %>
+            <form id="signup">
+                    <%# New Passowrd %>
+                    <%= f.label :new_password %><%= (": #{@minimum_password_length} characters minimum" if @minimum_password_length)%>
+                    <%= f.password_field :password,
+                      required: true,
+                      autofocus: true,
+                      class: "input input--password",
+                      input_html: { autocomplete: "new-password" } %><br >
+                    <%# Confirm New Passowrd %>
+                    <%= f.label :password_confirmation %><br >
+                      <%= f.password_field :password_confirmation,
+                      class: "input input--password",
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %><br >
+                      <%= f.button :submit, "Change", class: "submitDark"  %>
+                <% end %>
+            </form>
+
+        </div>
+    </div>    
+</div>
+
+
+

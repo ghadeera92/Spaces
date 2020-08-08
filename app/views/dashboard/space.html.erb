@@ -1,0 +1,158 @@
+ <%= javascript_pack_tag 'dashboard' %>
+  <%= javascript_pack_tag 'index' %>
+
+
+<div id="dashboard-container">
+
+  <div class="leftside-menu">
+
+    <div class="avatar">
+      <% if user_signed_in? %> 
+         <div class="iconspace"><p><%= current_user.name.first %></p></div>
+         <p class="iconp"> HELLO, <%= current_user.name.upcase %> <br> <%= current_user.email%> </p>
+       <% else %>
+         <div class="iconspace"><p></p></div>
+         <p > Hello </p>
+      <% end %>
+    </div>
+
+    <nav class="menu">
+      <% if user_signed_in? %> 
+      <%= link_to "EDIT PROFILE", edit_user_registration_path, class: "navsidedit" %>
+      <% else%>
+       <%= link_to "Sign in", new_user_session_path, class: "navside1" %>
+      <% end %>    
+    </nav>
+
+  </div>
+
+  <div class="main-grid">
+
+    <div class="item one">
+      <h1 id="spacetime" class="timespace"></h1>
+      <h1 id="spacegreeting" class="timespace"></h1>
+         <h2 id="spacedate" class="timespace2"></h2>
+
+    </div>
+
+  
+    <div class="item two">
+      <div class="note"> <i class="fas fa-pen"></i>  NOTES </div>
+      <div class="info">
+         <% @notes.each do |note|%>
+     <label class="todo">
+     
+            <li> <div class="todo-switch1"></div>
+             <%= link_to note.title, note , class: "navside" %>   
+            </li>
+              <% end %> 
+        </label>
+        <br> 
+           <label>
+           <%= link_to "Add Note ", new_note_path , class: "navsidenote" %> 
+        </label> 
+        <label>
+              <%= link_to " All Notes", notes_path, class: "navsidenote"  %> 
+        </label>  
+      </div>
+    </div>
+
+    
+    <div class="item three">
+      <div class="weather">
+      <br>
+        <i class="fas fa-6x fa-calendar-alt"></i>
+              <br><br>
+        
+        <%= link_to "CALENDAR", events_path, class: "navside" %>
+      </div>
+    </div>
+
+
+    <div class="item four">
+<div class="raw">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class="front">
+           <a target="_blank" href="https://pages.git.generalassemb.ly/Maram-Alfawaz/Kill-coronavirus-MaramAlfawaz/" rel="stylesheet"><i class="fas fa-gamepad"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class="front">
+         <a target="_blank" href="https://pages.git.generalassemb.ly/ghadeeralwafi/Sea-Battle-Game/#" rel="stylesheet"><i class="fas fa-ship"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class="front">
+         <a href="/tool/calculator" rel="stylesheet"><i class="fas fa-calculator"></i></a>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class="front">
+        <a target="_blank" href="https://mercury-musics.herokuapp.com/" rel="stylesheet"><i class="fas fa-music"></i></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+    <div class="item five">
+      <div class="rooms--top">
+        <p class="note"> <i class="fab fa-chrome"></i> DAILY WEBSITES </p>
+      </div>
+      <div class="rooms">
+      <% @favorites.each do |favorite|%>
+          <li > <div class="todo-switch1"></div>
+                <%= link_to (favorite.name), "#{favorite.url}",
+                  target: "_blank" , class: "navside" %>   
+          </li>
+        <% end %>
+        <br>
+           <%= link_to "Add Website", new_favorite_path , class: "navsideweb" %> 
+           <%= link_to "All Websites", favorites_path , class: "navsideweb" %> 
+      </div>
+    </div>
+
+
+ <div class="item six">
+      <div class="reminders">
+        <div class="reminder--btns">
+        </div>
+      </div>
+      <div class="reminders--list">
+        <label class="todo">
+           <p class="note"><i class="fas fa-clipboard-check"></i> TO-DO LIST</p>
+          <span class="todo-label"> 
+                    <% @todo_lists.each do |todo_list|%>
+
+            <li > <div class="todo-switch1"></div>
+             <%= link_to todo_list.title, todo_list,class: "navside" %> 
+          </li>
+              <% end %> 
+           </span>
+        </label>
+        <br> 
+        <label>
+          <%= link_to "Add List", new_todo_list_path, class: "navsidelist" %> 
+        </label> 
+        <label>
+          <%= link_to "All Lists", todo_lists_path , class: "navsidelist" %> 
+        </label>        
+      </div>
+    </div>
+  </div>
+</div>
+
+

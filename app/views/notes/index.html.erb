@@ -1,0 +1,28 @@
+<div class="divBackground1">
+
+<div class="button-container1">
+<div class="button-container2">
+      <div><%= link_to 'New Note', new_note_path, class:"btn btn-danger" %></div>
+</div>
+</div>
+
+<div class="main-content">
+    <% @notes.each do |note| %>
+      <div class="moleskine-wrapper">
+      <%= link_to note do %>
+        <div class="moleskine-notebook">
+           <div class="notebook-cover green">
+             <div class="notebook-skin">
+               <p class="cover-title"><%= note.title %></p>
+             </div>
+           </div>
+      <% end %>
+      <div class="notebook-page ruled"></div>
+     </div>
+        <h4><%= note.title %></h4>
+        </div>
+     <% end %>
+  
+</div>
+
+</div>

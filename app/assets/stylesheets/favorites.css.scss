@@ -1,0 +1,91 @@
+// Place all the styles related to the favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$dark: #1f7972;
+$anotherDark: #25857d;
+$breakpoint-alpha: 480px; // adjust to your needs
+
+.rwd-table {
+  margin: 0;
+  min-width: 300px; // adjust to your needs
+  
+  .trweb {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .thweb {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+
+  
+  .thweb, .tdweb {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }  
+}
+
+
+// presentational styling
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+$black: #455a64;
+$light: #a4e1e7;
+$pale: #37474f;
+$white: #ffffff;
+$dark: #F78D72;
+$navy: #37474f;
+
+
+.h1web {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: $navy;
+  margin: 0;
+}
+
+.rwd-table {
+  // border: solid 2px;
+  // color: #fff;
+  // border-radius: .4em;
+  // margin-left: 25%;
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+  th, td {
+    margin: .5em 1em;
+    @media (min-width: $breakpoint-alpha) { 
+      padding: 1em !important; 
+    }
+  }
+  th, td:before {
+    color: $pale;
+  }
+}
+
+.newfav {
+    padding: 5px;
+    margin-left: 45%;
+    background: $dark !important;
+    color: white !important;
+    &:hover {
+      background: $anotherDark !important;
+      color: white !important;
+    }
+}

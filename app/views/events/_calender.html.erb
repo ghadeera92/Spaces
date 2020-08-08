@@ -1,0 +1,10 @@
+<%# Call simple_calender < month_calender file %>
+<%= month_calendar events: events do |date, events| %>
+  <%= date %>
+  <% events.each do |event| %>
+    <div>
+    <%# link to event list section %>
+    <a href="#<%=event.id%>" class="calenderLink"><%= event.name%></a>
+    </div>
+  <% end %>
+<% end %>

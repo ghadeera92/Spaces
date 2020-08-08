@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+<html>
+  <head>
+      <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_pack_tag 'index' %>
+    <%= stylesheet_link_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-success"><%= alert %></p>
+    <% end %>
+    
+<header>
+  <nav class="landnav" am-layout="horizontal">
+  <a href="https://www.google.com/">GOOGLE</a>
+
+  <a class="right" href="#"><div id="clock"><h4 id="weather" class="indexweather"></h4></div></a>
+  </nav>
+</header>
+
+<div class="indexcontainer">
+
+  
+    <h1 id="greeting" class="ttext"><h1 class="ttext"><% if user_signed_in? %>, <%= current_user.name.upcase %></h1></h1>  
+    <% end %>  <br><br>
+
+    <h2 id="hourminutesecond" class="time"> </h2>
+    <h2 id="daymonthyear" class="date"> </h2>
+
+       
+    <% if user_signed_in? %> 
+       <a class="btn btn-light" href="/dashboard/space">DASHBOARD</a> 
+        <a class="btn btn-light" id="logout" href="/users/sign_out">Logout</a> 
+     <% else %>
+       <a class="btn btn-light" href="/users/sign_in">SIGN IN</a>
+       <a class="btn btn-light" href="/users/sign_up">SIGN UP</a>
+    <% end %>
+    <h3 id="text" class="quote"></h3>
+
+</div>
+
+<script>
+let token = (document.getElementsByTagName('meta')[1].content)
+
+document.getElementById("logout").addEventListener( "click", function(e){
+
+e.preventDefault();
+  fetch("/users/sign_out", {method: "delete",  headers: { 
+    "X-CSRF-Token": token }
+ 
+})
+
+ .then(res => {
+  console.log(res)
+  if (res.status == 204){
+    window.location = "/"
+  }
+})
+  .catch((error) => {
+    console.log(error);
+  });
+})
+
+</script>
+
+  </body>
+</html>
+
+
+

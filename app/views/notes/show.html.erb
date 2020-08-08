@@ -1,0 +1,38 @@
+<br>
+<br>
+<div class="button-container1">
+<div class="button-container2">
+      <div><%= link_to 'Edit', edit_note_path(@note) , class:"btn btn-danger mr-2" %></div>
+      <div><%= link_to 'Delete', note_path(@note), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger mr-2" %></div>
+</div>
+</div>
+
+
+
+<div class="note-show-container">
+<div id="notebook-paper">
+
+<div class="note-show-container">
+  <div class="col-md-12 text-center">
+    <div class="wrap-pencil">
+      <div class="pencil-tip">
+        <div class="graphite"></div>
+      </div>
+      <div class="pencil-body"></div>
+      <div class="pencil-ereaser-keeper"></div>
+      <div class="pencil-ereaser"></div>
+      <div class="pencil-shadow"></div>
+    </div>
+  </div>
+</div>
+
+    <h1 class="note-title"><%= @note.title %></h1>
+
+  <div id="content">
+    <div class="hipsum">
+       <p><%= @note.content.html_safe %></p> 
+    </div>
+</div>
+
+</div>
+

@@ -1,0 +1,40 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="panel panel--static">
+    <%# Welcome Section %>
+    <div style="position: relative; left: 560px; color: white">
+        <h1 class="panel__heading">HELLO & WELCOME</h1>
+        <p class="panel__copy">We are HAPPY to have you here <br>You will ENJOY this experince.</p><br><br>
+        <h1 class="panel__heading">HAVE AN ACCOUNT?</h1>
+         <%= render "devise/shared/links" %>
+         
+    </div>
+    
+    <%# Sign up Section %>
+    <div class="panel panel--sliding">
+        <div class="panel__content signup">
+          <h1 class="panel__heading">Sign up</h1>
+           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+           <%# Error Messages %>
+           <%= render "devise/shared/error_messages", resource: resource %>
+           <%# Form %>
+            <form id="signup">
+                   <%= f.label :name %><br />
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input input--name"  %> 
+
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input--email" %> 
+
+                    <%= f.label :password %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %><br />  
+                    <%= f.password_field :password, autocomplete: "new-password", class: "input input--password" %>
+
+                    <%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input input--password" %><br> <br>  
+                    <%= f.submit "Sign up", class: "submitDark" %> 
+               <% end %>
+            </form>
+        </div>
+    </div>    
+</div>

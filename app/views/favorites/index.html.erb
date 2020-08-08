@@ -1,0 +1,27 @@
+
+<div class="divBackground">
+
+<br>
+<h1 class="h1web">Favorites WEBs</h1>
+<br>
+<div class="todo-list-container">
+<table class="rwd-table">
+  <tr>
+    <th class="thweb">Name</th>
+    <th class="thweb">Url</th>
+    <th class="thweb" colspan="3">Setting</th>
+  </tr>
+      <% @favorites.each do |favorite| %>
+  <tr class="trweb">
+    <td class="tdweb" ><%= favorite.name %></td>
+    <td class="tdweb" ><%= favorite.url %></td>
+    <td class="tdweb" ><%= link_to 'Edit', edit_favorite_path(favorite) , class: "btn submitDark" %></td>
+    <td class="tdweb" ><%= link_to 'Destroy', favorite,  class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+    <% end %>
+      <td class="tdweb" colspan="4" style="text-align: center;">    <%= link_to 'New Favorite', new_favorite_path , class: "btn submitDark" %></td>
+
+</table>
+</div>
+<br> <br>
+</div>

@@ -1,0 +1,32 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="panel panel--static">
+    <%# Welcome Section %>
+    <div style="position: relative; left: 560px; color: white">
+        <h1 class="panel__heading">WELCOME BACK</h1>
+        <p class="panel__copy">We are HAPPY to have you back.</p><br ><br><br>
+        <h1 class="panel__heading">DON'T HAVE AN ACCOUNT?</h1><br >
+        <%= render "devise/shared/links" %>
+    </div>
+    
+    <%# Sign in Section %>
+    <div class="panel panel--sliding">
+        <div class="panel__content signup">
+        <br ><br ><br >
+            <h1 class="panel__heading">Sign in</h1>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%# Error Messages %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%# Form %>
+            <form id="signup">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input--email" %>
+
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password", class: "input input--password" %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %><br>
+                <%= f.button :submit, "Sign in", class: "submitDark" %>
+            <% end %>
+            </form>
+        </div>
+   </div>    
+</div>

@@ -1,0 +1,132 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// .welcome-index
+
+// Mixin
+$light: #eeeeee;
+
+@mixin v-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Variables
+$primary: #2196f3;
+$font-family: "Roboto", sans-serif;
+$depth: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+// Code
+.indexcontainer {
+  margin-top: 4%;
+  font-family: $font-family;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+#daymonthyear {
+  padding: 3rem 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#daymonthyear {
+  @extend #daymonthyear;
+  border-top: 1px solid #eeeeee;
+}
+
+.indexweather {
+  float: right;
+  margin-top: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.ttext {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  display: inline;
+  justify-content: center;
+}
+.quote {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+// nav part
+
+header,
+.landnav {
+  display: block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+a {
+  font-size: 15px;
+  background-color: transparent;
+}
+
+header,
+.landnav {
+  width: 100%;
+  word-wrap: break-word;
+}
+header,
+.landnav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  position: relative;
+}
+
+.dash {
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  background-color: rgba($color: #d4d1d1, $alpha: 0.8);
+}
+
+.landnav[am-layout][am-layout~="horizontal"] a {
+  -webkit-flex: 4.3333%;
+  -ms-flex: 4.3333%;
+  flex: 4.3333%;
+}
+
+.landnav[am-layout] a:not(.am-floating-action) {
+  padding: 1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+header {
+  font-size: 112.5%;
+  line-height: 1.65;
+  color: white;
+}
+
+header a {
+  color: white;
+}
